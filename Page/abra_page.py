@@ -71,7 +71,6 @@ class Abra_Page(BasePage):
         return text
 
     def get_missing_company_name_warning_exist(self):
-        print("self.MISSING_COMPANY")
         return self.is_element_visible(self.MISSING_COMPANY)
 
     def get_missing_phone_warning_exist(self):

@@ -64,6 +64,7 @@ class BasePage:
 
             if not self.perform_click(to_clear):
                 return False
+            #checking if MAC OS or Windows
             if platform == "darwin":
                 self.send_keys(to_clear, Keys.COMMAND + 'a')
                 self.send_keys(to_clear, Keys.BACKSPACE)
