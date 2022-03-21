@@ -6,7 +6,6 @@ MAIN_URL = "http://automation.herolo.co.il"
 
 @pytest.fixture(scope='class')
 def init_driver(request):
-    options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.get(MAIN_URL)
     driver.maximize_window()
