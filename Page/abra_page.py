@@ -42,15 +42,19 @@ class Abra_Page(BasePage):
         self.send_keys(self.TELEPHONE, text)
 
     def get_name(self):
-        text = self.get_element_text(self.NAME)
+        text = self.get_element_value(self.NAME)
         return text
 
     def get_email(self):
-        text = self.get_element_text(self.EMAIL)
+        text = self.get_element_value(self.EMAIL)
         return text
 
     def get_telephone(self):
-        text = self.get_element_text(self.TELEPHONE)
+        text = self.get_element_value(self.TELEPHONE)
+        return text
+
+    def get_company(self):
+        text = self.get_element_value(self.COMPANY)
         return text
 
     def get_wrong_email_warning(self):

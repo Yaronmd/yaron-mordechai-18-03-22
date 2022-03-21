@@ -73,3 +73,8 @@ class BasePage:
                 self.send_keys(to_clear, Keys.BACKSPACE)
                 return True
             return False
+
+    def get_element_value(self, by_locator, attribute="value"):
+        val = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(by_locator)). \
+            get_attribute(attribute)
+        return val

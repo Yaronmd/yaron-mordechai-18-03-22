@@ -20,15 +20,20 @@ class TestPage(BaseTest):
 
         self.abra_page.set_telephone("0545651550")
 
-        if self.abra_page.get_name() == "Yaron":
-            pass
-        if self.abra_page.get_email() == "yaronmord@gmail.com":
-            pass
+
+        assert  self.abra_page.get_name() == "Yaron"
+
+        assert  self.abra_page.get_email() == "yaronmord@gmail.com"
+
+        assert self.abra_page.get_telephone() == "0545651550"
+
+        assert  self.abra_page.get_company() == "MRL"
 
         assert  self.abra_page.click_talk_with_us()
 
+        #checking if move to thank you page
         current_page = "https://automation.herolo.co.il/"
-        time.sleep(20)
+
         res = self.abra_page.check_url_page(current_page)
         if not res:
             assert False

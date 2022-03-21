@@ -14,7 +14,8 @@ class TestWhatsApp(BaseTest):
         current_page = "https://automation.herolo.co.il/"
         self.abra_page.click_whatsapp_float_button()
 
-        time.sleep(10)
+        time.sleep(2)
+        #test if whatsapp web opened
         self.abra_page.switch_tab()
         res = self.abra_page.check_url_page(current_page)
         if not res:

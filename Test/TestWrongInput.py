@@ -44,7 +44,7 @@ class TestWrongInput(BaseTest):
     @pytest.mark.order(3)
     def test_submit_empty_fields(self):
         self.abra_page.scroll_to_object("name")
-        #clearing textboxes
+        #clearing textsboxes
         self.abra_page.clear_name_textbox()
         self.abra_page.clear_company_textbox()
         self.abra_page.clear_email_textbox()
