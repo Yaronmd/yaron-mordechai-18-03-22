@@ -1,5 +1,4 @@
 import pytest
-import time
 from Page.abra_page import Abra_Page
 from Test.BaseTest import BaseTest
 

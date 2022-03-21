@@ -24,6 +24,7 @@ class TestWrongInput(BaseTest):
         if not self.abra_page.click_talk_with_us():
             assert False
         time.sleep(5)
+        #check if got msg warning
         if self.abra_page.get_email() == "1L2L#L4dAd":
             if self.abra_page.get_wrong_email_warning() != "כתובת אימייל לא חוקית":
                 assert False
@@ -37,6 +38,7 @@ class TestWrongInput(BaseTest):
             assert False
 
             time.sleep(5)
+            # check if got msg warning
             if self.abra_page.get_telephone() == "052123123123123":
                 if self.abra_page.get_wrong_telephone_warning() != "מספר טלפון לא חוקי":
                     assert False
@@ -53,7 +55,7 @@ class TestWrongInput(BaseTest):
         assert self.abra_page.click_talk_with_us()
 
         time.sleep(5)
-        #checking missing values
+        #checking missing values appeared
         if not self.abra_page.get_missing_company_name_warning_exist() and \
            not self.abra_page.get_missing_name_warning_exist() and \
            not self.abra_page.get_missing_email_warning_exist() and \
