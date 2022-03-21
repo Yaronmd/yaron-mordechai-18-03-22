@@ -15,6 +15,7 @@ class TestWrongInput(BaseTest):
 
     @pytest.mark.order(1)
     def test_wrong_input_email(self):
+        #scroll to name object
         self.abra_page.scroll_to_object("name")
         self.abra_page.set_name("Yaron")
         self.abra_page.set_company("MRL")
@@ -23,7 +24,6 @@ class TestWrongInput(BaseTest):
 
         if not self.abra_page.click_talk_with_us():
             assert False
-        time.sleep(5)
         #check if got msg warning
         if self.abra_page.get_email() == "1L2L#L4dAd":
             if self.abra_page.get_wrong_email_warning() != "כתובת אימייל לא חוקית":
@@ -37,7 +37,6 @@ class TestWrongInput(BaseTest):
         if not self.abra_page.click_talk_with_us():
             assert False
 
-            time.sleep(5)
             # check if got msg warning
             if self.abra_page.get_telephone() == "052123123123123":
                 if self.abra_page.get_wrong_telephone_warning() != "מספר טלפון לא חוקי":
@@ -54,7 +53,6 @@ class TestWrongInput(BaseTest):
 
         assert self.abra_page.click_talk_with_us()
 
-        time.sleep(5)
         #checking missing values appeared
         if not self.abra_page.get_missing_company_name_warning_exist() and \
            not self.abra_page.get_missing_name_warning_exist() and \

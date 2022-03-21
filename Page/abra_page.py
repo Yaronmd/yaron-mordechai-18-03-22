@@ -15,8 +15,8 @@ class Abra_Page(BasePage):
     WHATSAPP_SHORTCUT = (By.XPATH,"//a[contains(@class, 'BtnWhatsapp')]")
 
     #error footers"
-    WRONG_EMAIL = (By.XPATH,"//span[.='כתובת אימייל לא חוקית']//parent::label")
-    WRONG_PHONE = (By.XPATH,"//span[.='מספר טלפון לא חוקי']//parent::label")
+    WRONG_EMAIL = (By.XPATH,"//span[.='כתובת אימייל לא חוקית']")
+    WRONG_PHONE = (By.XPATH,"//span[.='מספר טלפון לא חוקי']")
     #missing footers
     MISSING_NAME = (By.XPATH,"//span[text()='שדה שם הוא שדה חובה']")
     MISSING_COMPANY = (By.XPATH,"//span[text()='שדה חברה הוא שדה חובה']")
@@ -59,6 +59,7 @@ class Abra_Page(BasePage):
 
     def get_wrong_email_warning(self):
         text = self.get_element_text(self.WRONG_EMAIL)
+
         return text
 
     def get_wrong_telephone_warning(self):
